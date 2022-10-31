@@ -1,0 +1,61 @@
+.board {
+  position: relative;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+  height: 350px;
+  box-shadow: gray 0 5px 10px;
+  border-radius: 5px;
+  background-color: #bbb;
+}
+.cell {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: solid 1px black;
+  background-color: rgb(194, 194, 173);
+}
+.clickArea {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  /* background-color: rgba(255, 192, 203, 0.44); */
+}
+
+@keyframes put {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.true,
+.false {
+  font-size: 26px;
+  animation: put 0.5s ease-out;
+  cursor: default;
+}
+
+.true::before {
+  color: black;
+  content: '●';
+}
+.false::before {
+  /* animation: winCell 1.2s infinite; */
+  color: white;
+  content: '●';
+}
+
+@keyframes winCell {
+  from {
+    color: orange;
+  }
+  to {
+  }
+}
